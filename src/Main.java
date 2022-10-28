@@ -39,10 +39,16 @@ public class Main {
                     Console.log("Enter the damage: ");
                     String damageStr = System.console().readLine();
                     int damage = Integer.parseInt(damageStr);
+                    if (damage <= 0) {
+                        Console.log("Damage must be a positive number.");
+                    }
 
                     Console.log("Enter the ammo: ");
                     String ammoStr = System.console().readLine();
                     int ammo = Integer.parseInt(ammoStr);
+                    if (ammo <= 0) {
+                        Console.log("Ammo must be a positive number.");
+                    }
 
                     Weapon newWeapon = new Weapon(weaponName, damage, ammo);
                     equipmentGenerator.addToTheEquipments(newWeapon);
@@ -89,7 +95,6 @@ public class Main {
 
         Console.logWithDelay("You hear something again...");
         Console.logWithDelay("Is there somebody in here??");
-
         Console.logWithDelay("To be continued...");
     }
 }
