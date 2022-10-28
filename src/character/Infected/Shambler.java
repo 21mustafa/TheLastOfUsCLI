@@ -10,7 +10,7 @@ public class Shambler extends Infected {
     @Override
     public void onDead(Character enemy) {
         this.attack(enemy);
-        System.out.println("Oh no! It spreat poisonous spores!!");
+        System.out.println("Oh no! It spread poisonous spores!!");
         enemy.printCharacterInfo();
     }
 }
