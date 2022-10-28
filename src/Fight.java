@@ -5,7 +5,7 @@ import src.character.Infected.Infected;
 
 public class Fight {
     public static void start(Infected infected, Human mainCharacter, Score score) {
-        Console.logWithDelay("\nYou face with a " + infected.getName() + " !");
+        Console.logWithDelay("\n\n------------------------------\nYou face with a " + infected.getName() + " !");
         infected.printCharacterInfo();
 
         while (true) {
@@ -13,7 +13,7 @@ public class Fight {
             score.updateUsedAmmo();
 
             if (!infected.isAlive()) {
-                Console.log("You killed it.\n--------------------\n");
+                Console.log("You killed it.\n\n------------------------------\n");
                 infected.onDead(mainCharacter);
                 score.updateKilledInfecteds();
                 if (!mainCharacter.isAlive()) {

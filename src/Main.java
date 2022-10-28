@@ -29,7 +29,7 @@ public class Main {
 
         boolean result = true;
         while (result) {
-            Console.logWithDelay("\nDo you want to add a weapon? (y/n)");
+            Console.log("\nDo you want to add a weapon? (y/n)");
             result = Console.getInput("Weapon:", "Fine...\n");
             if (result) {
                 try {
@@ -41,6 +41,7 @@ public class Main {
                     int damage = Integer.parseInt(damageStr);
                     if (damage <= 0) {
                         Console.log("Damage must be a positive number.");
+                        continue;
                     }
 
                     Console.log("Enter the ammo: ");
@@ -48,6 +49,7 @@ public class Main {
                     int ammo = Integer.parseInt(ammoStr);
                     if (ammo <= 0) {
                         Console.log("Ammo must be a positive number.");
+                        continue;
                     }
 
                     Weapon newWeapon = new Weapon(weaponName, damage, ammo);
@@ -96,5 +98,7 @@ public class Main {
         Console.logWithDelay("You hear something again...");
         Console.logWithDelay("Is there somebody in here??");
         Console.logWithDelay("To be continued...");
+
+        score.printScore();
     }
 }
